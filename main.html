@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Heart Stroke Prediction</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">AGM</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Heart Care</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Heart Care</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Heart Stroke Prediction</h1>
+      <div class="row center">
+        <h5 class="header col s12 light"><b>Predict your heart stroke rate now</b></h5>
+      </div>
+     
+      <br><br>
+ 
+  <div class="row">
+    <form action="/predict" method="post" class="col s12">
+
+      <div class="input-field col s6">
+        <label for="age"><b>Age</b></label>
+        <br>
+        <input type="text" name="age" id="age" placeholder="in yrs" class="validate">
+      </div>
+      
+      <div class="input-field col s6">
+        <label for="gender"><b>Gender</b></label>
+        <br>
+        <input type="text" name="gender" id="gender" placeholder="female=1 , male=2" class="validate">
+      </div>
+
+      <div class="input-field col s6">
+        <label for="height"><b>Height</b></label>
+        <br>
+        <input type="text" name="height" id="height" placeholder="in cms" class="validate">
+      </div>
+
+      <div class="input-field col s6">
+        <label for="weight"><b>Weight</b></label>
+        <br>
+        <input type="text" name="weight" id="weight" placeholder="in kgs" class="validate">
+      </div>
+
+      <div class="input-field col s6">
+        <label for="high"><b>High BP rate</b></label>
+        <br>
+        <input type="text" name="high" id="high" class="validate">
+      </div>
+
+      <div class="input-field col s6">
+        <label for="low"><b>Low BP rate</b></label>
+        <br>
+        <input type="text" name="low" id="low" class="validate">
+      </div>
+
+      <div class="input-field col s6">
+        <label for="chol"><b>Cholesterol</b></label>
+        <br>
+        <input type="text" name="chol" id="chol" placeholder="normal=1 , above normal=2 , well above normal=3" class="validate">
+      </div>
+
+      <div class="input-field col s6">
+         <label for="glucose"><b>Glucose</b></label>
+         <br>
+        <input type="text" name="glucose" id="glucose" placeholder="normal=1 , above normal=2 , well above normal=3" class="validate">
+      </div>
+
+      <div class="input-field col s6">
+        <label for="smoke"><b>Smoking status</b></label>
+        <br>
+        <input type="text" name="smoke" id="smoke" placeholder="never=0 , smoke=1" class="validate">
+      </div>
+
+      <div class="input-field col s6">
+        <label for="alcohol"><b>Alcohol intake</b></label>
+        <br>
+        <input type="text" name="alcohol" id="alcohol" placeholder="never=0 , take alcohol=1" class="validate">
+      </div>
+
+      <div class="input-field col s6">
+        <label for="physical activity"><b>Physical activity</b></label>
+        <br>
+        <input type="text" name="physical activity" id="physical activity" placeholder="no activity=0 , physical activity=1" class="validate">
+      </div>
+      
+      <div class="row center col s12">
+        <button type="submit" class="btn-large waves-effect waves-light orange">Predict</button>
+      </div>
+
+    </form>
+  </div>
+  
+  <br><h4>{{prediction_text}}</h4><br>
+  
+      </div>
+    </div>
+  <br>
+  <br>
+  <br>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Heart Care</h5>
+          <p class="grey-text text-lighten-4">We at Heart Care promise our patients a better tomorrow. Years of experience enable us to serve you better.Be rest assured you are safe in the skillful hands of our doctors.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Our specialities</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Cardiac surgery</a></li>
+            <li><a class="white-text" href="#!">Cardiology</a></li>
+            <li><a class="white-text" href="#!">Chest pain clinic</a></li>
+            <li><a class="white-text" href="#!">Hypertension clinic</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">For medical professionals</a></li>
+            <li><a class="white-text" href="#!">FAQs</a></li>
+            <li><a class="white-text" href="#!">Address</a></li>
+            <li><a class="white-text" href="#!">Latest news</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
